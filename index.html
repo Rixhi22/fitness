@@ -25,7 +25,8 @@
     header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem}
-    .logo{width:50px;height:50px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:1.4rem}
+    .brand span:first-child{color: var(--accent)}
+    .brand span:last-child{color: var(--accent)}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
     .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
     .menu a:hover{background:var(--accent); color: white}
@@ -66,6 +67,7 @@
 
     /* Reviews */
     .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .reviews .card{padding:20px; min-height:180px; display:flex; flex-direction:column; justify-content:space-between}
     .stars{letter-spacing:2px;color:#ffd166;margin-bottom:12px}
 
     /* Forms */
@@ -108,18 +110,22 @@
       .hero{padding: 60px 0 40px}
       .hero-cta{flex-direction: column; align-items: stretch}
       .hero-cta .btn{width: 100%; text-align: center; justify-content: center; margin-bottom: 12px}
-      .trainer{flex-direction: column; text-align: center}
+      .trainer{flex-direction: column; text-align: center; gap: 16px}
       .trainer .avatar{margin: 0 auto}
       .inline{flex-direction: column; align-items: stretch}
       .payment-methods{justify-content: center; gap: 12px}
       .brand{font-size: 1.4rem}
-      .brand .logo{width:44px;height:44px; font-size: 1.2rem}
       section{padding: 50px 0}
       
       /* Fix text fitting issues */
-      .trainer, .reviews .card, .payment-container {
+      .trainer-info, .reviews .card, .payment-container {
         word-wrap: break-word;
         overflow-wrap: break-word;
+        width: 100%;
+      }
+      
+      .trainer-info p {
+        margin: 8px 0;
       }
       
       .payment-methods {
@@ -133,6 +139,11 @@
         white-space: normal;
         padding: 10px;
       }
+      
+      .reviews .card {
+        min-height: auto;
+        padding: 18px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -143,7 +154,6 @@
       .card{padding: 20px}
       .btn{padding: 14px 16px}
       .brand{font-size: 1.3rem; gap: 8px}
-      .brand .logo{width:40px;height:40px; font-size: 1.1rem}
       h2{font-size: 1.6rem}
       
       /* Additional mobile fixes */
@@ -153,11 +163,15 @@
       }
       
       .reviews .card {
-        padding: 18px;
+        padding: 16px;
       }
       
       .payment-container {
         padding: 15px;
+      }
+      
+      .trainer-info {
+        text-align: center;
       }
     }
 
@@ -187,6 +201,7 @@
     
     .reviews .card p {
       word-break: break-word;
+      margin-bottom: 12px;
     }
     
     .payment-container {
@@ -201,8 +216,10 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Delta Fitness Home">
-        <div class="logo">DF</div>
-        <span>DELTA FITNESS</span>
+        <span>D</span>
+        <span>ELTA</span>
+        <span>F</span>
+        <span>ITNESS</span>
       </a>
 
       <nav class="menu" aria-label="Primary">
@@ -405,18 +422,18 @@
     <div class="reviews">
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
+        <p>Best vibes, solid equipment, and trainers who actually care about form.</p>
+        <small style="color:var(--muted)">— Sanjay</small>
       </div>
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
+        <p>Joined for weight loss, stayed for the community. Results in 8 weeks!</p>
+        <small style="color:var(--muted)">— Meera</small>
       </div>
       <div class="card">
-        <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
+        <div class="stars">★★★★☆</div>
+        <p>Great PT sessions and flexible timings. Highly recommended.</p>
+        <small style="color:var(--muted)">— Rahul</small>
       </div>
     </div>
   </section>
