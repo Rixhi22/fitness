@@ -70,6 +70,10 @@
     input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:12px}
     textarea{min-height:120px}
     .inline{display:flex;gap:10px;flex-wrap:wrap}
+    
+    /* Hours */
+    .hours{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .hours div{padding:6px 0}
 
     /* Footer */
     footer{padding:26px 0;color:#cfcfd4}
@@ -80,6 +84,7 @@
       .burger{display:block}
       .cta{display:none}
       #mobile.show{display:block}
+      .hours{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -104,8 +109,8 @@
       </nav>
 
       <div class="cta">
-        <a class="btn" href="tel:8667002484" aria-label="Call 8667002484">Call : 8667002484</a>
-        <a class="btn primary" href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn" href="tel:6384645968" aria-label="Call 6384645968">Call : 6384645968</a>
+        <a class="btn primary" href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -126,21 +131,34 @@
         <a href="#feedback" onclick="closeMobile()">Feedback</a>
       </nav>
       <div class="inline" style="padding:10px 0 6px">
-        <a class="btn" href="tel:8667002484">Call : 8667002484</a>
-        <a class="btn primary" href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn" href="tel:6384645968">Call : 6384645968</a>
+        <a class="btn primary" href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero container" id="top">
-    <h1>Stronger Every Delta</h1>
-    <p>Premium strength & conditioning gym in Madurai. Flexible packages, expert trainers, and results you can feel.</p>
+    <h1>Where Hustle Meets Muscle 💪</h1>
+    <p>Rise»Grind»Conquer<br>Elite Machines»Elite Physique<br>Pro Trainers»Transform»Build Legends</p>
     <div class="hero-cta">
       <a class="btn primary" href="#enquiry">Enquiry</a>
       <a class="btn" href="#bookings">Book Group Class</a>
       <a class="btn" href="#bookings">Book PT Session</a>
       <a class="btn" href="#login">Client Login</a>
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section class="container" id="hours">
+    <h2>Operating Hours</h2>
+    <div class="card">
+      <div class="hours">
+        <div><strong>Monday - Saturday:</strong></div>
+        <div>5:00 AM - 10:00 PM</div>
+        <div><strong>Sunday:</strong></div>
+        <div>Closed</div>
+      </div>
     </div>
   </section>
 
@@ -203,21 +221,39 @@
     <h2>Packages</h2>
     <div class="grid">
       <div class="card" style="grid-column: span 4;">
-        <h3>Monthly</h3>
-        <p class="muted">Unlimited gym access</p>
-        <p><strong>₹1,999</strong></p>
+        <h3>Basic Pack</h3>
+        <p class="muted">1 Month Membership</p>
+        <p><strong>₹1,500</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
-        <h3>Quarterly</h3>
-        <p class="muted">Save more, stay consistent</p>
-        <p><strong>₹5,499</strong></p>
+        <h3>3 Months</h3>
+        <p class="muted">Standard membership</p>
+        <p><strong>₹3,500</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
-        <h3>Annual</h3>
-        <p class="muted">Best value + perks</p>
-        <p><strong>₹18,999</strong></p>
+        <h3>6 Months</h3>
+        <p class="muted">Extended membership</p>
+        <p><strong>₹6,000</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+      <div class="card" style="grid-column: span 4;">
+        <h3>1 Year</h3>
+        <p class="muted">Annual membership</p>
+        <p><strong>₹10,000</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+      <div class="card" style="grid-column: span 4;">
+        <h3>Student Pack</h3>
+        <p class="muted">Budget friendly for students</p>
+        <p><strong>₹1,000/month</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+      <div class="card" style="grid-column: span 4;">
+        <h3>Elite Training</h3>
+        <p class="muted">Customized workout plans</p>
+        <p><strong>₹6,000/month</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
     </div>
@@ -225,14 +261,37 @@
 
   <!-- Offers -->
   <section class="container" id="offers">
-    <h2>Offers</h2>
-    <div class="card">
-      <ul style="margin:0 0 10px 18px">
-        <li>Student Discount: 10% OFF (valid ID required)</li>
-        <li>Buddy Pass: Bring a friend free for 7 days</li>
-        <li>Festival Offer: Extra PT session on annual sign‑ups</li>
-      </ul>
-      <a class="btn primary" href="#enquiry">Claim Offer</a>
+    <h2>Special Offers</h2>
+    <div class="grid">
+      <div class="card" style="grid-column: span 6;">
+        <h3>Women's Exclusive Offer</h3>
+        <ul style="margin:0 0 10px 18px">
+          <li>FREE Diet Plan Consultation (once every 2 months)</li>
+          <li>Buddy Pass - Bring a female friend for 1 week free (once every 3 months)</li>
+        </ul>
+        <a class="btn primary" href="#enquiry">Claim Offer</a>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3>Gym Opening Offers</h3>
+        <p class="muted">For students below 20 years</p>
+        <ul style="margin:0 0 10px 18px">
+          <li>3 Months (₹3,500) - Get +1 Extra Month Free</li>
+          <li>6 Months (₹6,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
+          <li>1 Year (₹10,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
+        </ul>
+        <a class="btn primary" href="#enquiry">Claim Offer</a>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3>Corporate Offer</h3>
+        <p class="muted">Join 4 and add 1 person free</p>
+        <a class="btn primary" href="#enquiry">Enquire Now</a>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3>Payment Methods</h3>
+        <p class="muted">We accept:</p>
+        <p>Cash • UPI</p>
+        <a class="btn" href="#enquiry">More Info</a>
+      </div>
     </div>
   </section>
 
@@ -247,7 +306,7 @@
       <div class="ph"></div>
       <div class="ph"></div>
     </div>
-    <p style="color:var(--muted);margin-top:10px">Add your photos by replacing these placeholders with real images (e.g., <code>&lt;img src="/images/leg-press.jpg" alt="Leg press" /&gt;</code>).</p>
+    <p style="color:var(--muted);margin-top:10px">Gallery space reserved for future images of our facilities and equipment.</p>
   </section>
 
   <!-- Trainers -->
@@ -257,24 +316,8 @@
       <div class="card trainer">
         <div class="avatar" aria-hidden="true"></div>
         <div>
-          <strong>Arun Kumar</strong>
-          <div class="muted" style="color:var(--muted)">Strength & Conditioning • 7 yrs</div>
-          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
-        </div>
-      </div>
-      <div class="card trainer">
-        <div class="avatar" aria-hidden="true"></div>
-        <div>
-          <strong>Priya S</strong>
-          <div class="muted" style="color:var(--muted)">Weight Loss & Mobility • 5 yrs</div>
-          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
-        </div>
-      </div>
-      <div class="card trainer">
-        <div class="avatar" aria-hidden="true"></div>
-        <div>
-          <strong>Vishal R</strong>
-          <div class="muted" style="color:var(--muted)">Hypertrophy & PT • 6 yrs</div>
+          <strong>Jeeva</strong>
+          <div class="muted" style="color:var(--muted)">Empowering every workout with strength, discipline, and results</div>
           <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
         </div>
       </div>
@@ -287,18 +330,18 @@
     <div class="reviews">
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Best vibes, solid equipment, and trainers who actually care about form.</p>
-        <small class="muted" style="color:var(--muted)">— Sanjay</small>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Joined for weight loss, stayed for the community. Results in 8 weeks!</p>
-        <small class="muted" style="color:var(--muted)">— Meera</small>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
-        <div class="stars">★★★★☆</div>
-        <p>Great PT sessions and flexible timings. Highly recommended.</p>
-        <small class="muted" style="color:var(--muted)">— Rahul</small>
+        <div class="stars">★★★★★</div>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
       </div>
     </div>
   </section>
@@ -324,9 +367,10 @@
   <footer>
     <div class="container inline" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
       <div>
-        <strong>Call :</strong> <a href="tel:8667002484">8667002484</a> &nbsp;•&nbsp;
-        <a href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+        <strong>Call :</strong> <a href="tel:6384645968">6384645968</a> / <a href="tel:8610209166">8610209166</a> &nbsp;•&nbsp;
+        <a href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
       </div>
+      <div>SVN College Opposite, Nagamalai, Pudukkottai, Madurai</div>
       <div>Powered by <strong>Easy Gym Software</strong></div>
     </div>
   </footer>
@@ -352,4 +396,3 @@
   </script>
 </body>
 </html>
-
