@@ -24,7 +24,7 @@
     .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
     header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.4rem}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem}
     .logo{width:50px;height:50px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:1.4rem}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
     .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
@@ -43,7 +43,7 @@
 
     /* Hero */
     .hero{padding:80px 0 60px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(157,13,43,.22), transparent 60%)}
-    .hero h1{font-size:clamp(2.5rem,7vw,4rem);line-height:1.1;margin:0 0 20px;font-weight:900;letter-spacing:.02em}
+    .hero h1{font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.1;margin:0 0 20px;font-weight:900;letter-spacing:.02em}
     .hero p{margin:0 0 32px;color:var(--muted);font-size:clamp(1.2rem,2.8vw,1.5rem);line-height:1.6}
     .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
 
@@ -85,7 +85,7 @@
 
     /* Payment methods */
     .payment-methods{display: flex; gap: 14px; margin-top: 16px; flex-wrap: wrap; justify-content: center}
-    .payment-method{background: #1a1a1e; padding: 12px 16px; border-radius:10px; font-size: 1rem}
+    .payment-method{background: #1a1a1e; padding: 12px 16px; border-radius:10px; font-size: 1rem; white-space: nowrap}
 
     /* Responsive */
     @media (max-width: 1200px) {
@@ -100,7 +100,7 @@
       .hours{grid-template-columns:1fr}
       .grid{grid-template-columns: 1fr; gap: 20px}
       .card{grid-column: span 12 !important; padding: 24px}
-      .brand{font-size: 1.3rem}
+      .brand{font-size: 1.5rem}
     }
 
     @media (max-width: 768px) {
@@ -112,23 +112,53 @@
       .trainer .avatar{margin: 0 auto}
       .inline{flex-direction: column; align-items: stretch}
       .payment-methods{justify-content: center; gap: 12px}
-      .brand{font-size: 1.2rem}
+      .brand{font-size: 1.4rem}
       .brand .logo{width:44px;height:44px; font-size: 1.2rem}
       section{padding: 50px 0}
+      
+      /* Fix text fitting issues */
+      .trainer, .reviews .card, .payment-container {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      .payment-methods {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .payment-method {
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+        padding: 10px;
+      }
     }
 
     @media (max-width: 480px) {
       .container{padding: 0 16px}
       .hero{padding: 50px 0 30px}
-      .hero h1{font-size: 2.2rem}
+      .hero h1{font-size: 2rem}
       section{padding: 40px 0}
       .card{padding: 20px}
       .btn{padding: 14px 16px}
-      .brand{font-size: 1.1rem; gap: 8px}
+      .brand{font-size: 1.3rem; gap: 8px}
       .brand .logo{width:40px;height:40px; font-size: 1.1rem}
       h2{font-size: 1.6rem}
-      .payment-methods{flex-direction: column; align-items: center}
-      .payment-method{width: 100%; text-align: center}
+      
+      /* Additional mobile fixes */
+      .trainer {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .reviews .card {
+        padding: 18px;
+      }
+      
+      .payment-container {
+        padding: 15px;
+      }
     }
 
     /* Animation */
@@ -148,6 +178,21 @@
     @viewport {
       width: device-width;
       zoom: 1.0;
+    }
+    
+    /* Specific fixes for text fitting */
+    .trainer-info {
+      min-width: 0; /* Allows text to wrap properly */
+    }
+    
+    .reviews .card p {
+      word-break: break-word;
+    }
+    
+    .payment-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
   </style>
 </head>
@@ -196,7 +241,7 @@
 
   <!-- Hero -->
   <section class="hero container" id="top">
-    <h1>Where Hustle Meets Muscle</h1>
+    <h1>WHERE HUSTLE MEETS MUSCLE</h1>
     <p>Rise » Grind » Conquer<br>Elite Machines » Elite Physique<br>Pro Trainers » Transform » Build Legends</p>
     <div class="hero-cta">
       <a class="btn primary" href="#enquiry">Enquire Now</a>
@@ -313,14 +358,14 @@
         <p>Join 4 and add 1 person free</p>
         <a class="btn primary" href="#enquiry">Enquire Now</a>
       </div>
-      <div class="card" style="grid-column: span 6;">
+      <div class="card payment-container" style="grid-column: span 6;">
         <h3>Payment Methods</h3>
         <p>We accept:</p>
         <div class="payment-methods">
           <div class="payment-method">Cash</div>
           <div class="payment-method">UPI</div>
         </div>
-        <a class="btn" href="#enquiry">More Info</a>
+        <a class="btn" href="#enquiry" style="margin-top: 16px">More Info</a>
       </div>
     </div>
   </section>
@@ -345,7 +390,7 @@
     <div class="trainers">
       <div class="card trainer">
         <div class="avatar" aria-hidden="true"></div>
-        <div>
+        <div class="trainer-info">
           <strong>Jeeva</strong>
           <p style="color:var(--muted); margin:12px 0">Empowering every workout with strength, discipline, and results</p>
           <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
