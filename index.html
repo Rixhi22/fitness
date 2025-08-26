@@ -10,47 +10,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0b0c; --card:#141417; --muted:#9aa0a6; --text:#f5f7fb; --accent:#e11d48; /* rose-600 */
-      --accent-2:#ef4444; /* red-500 */
-      --ring: rgba(225,29,72,.4);
+      --bg:#0b0b0c; --card:#141417; --muted:#9aa0a6; --text:#f5f7fb; 
+      --accent:#9d0d2b; /* Darker red */
+      --accent-2:#7a0a21; /* Even darker red */
+      --ring: rgba(157,13,43,.4);
       --maxw:1200px;
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box; margin:0; padding:0}
     html,body{height:100%}
     body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;line-height:1.5}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(11,11,12,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
+    header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
     .brand .delta{width:28px;height:28px;border:2px solid var(--text);clip-path:polygon(50% 0, 0 100%, 100% 100%);position:relative}
     .brand .delta::after{content:"";position:absolute;inset:3px;border:2px solid var(--accent);clip-path:polygon(50% 0, 0 100%, 100% 100%)}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
-    .menu a{padding:8px 10px;border-radius:10px;color:#e8eaed}
-    .menu a:hover{background:#1e1e22}
+    .menu a{padding:8px 10px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
+    .menu a:hover{background:var(--accent); color: white}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31; transition: all 0.3s ease}
+    .btn:hover{transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3)}
     .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 0 0 0 var(--ring)}
     .btn.primary:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
 
     /* Mobile menu */
-    .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px}
-    .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0}
+    .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px; background: transparent}
+    .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0; transition: all 0.3s ease}
     #mobile{display:none;padding:10px 0;border-top:1px solid #232326}
     #mobile .menu{flex-direction:column;align-items:flex-start}
 
     /* Hero */
-    .hero{padding:56px 0 40px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(225,29,72,.22), transparent 60%)}
+    .hero{padding:56px 0 40px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(157,13,43,.22), transparent 60%)}
     .hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:0 0 10px;font-weight:800;letter-spacing:.02em}
     .hero p{margin:0 0 22px;color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem)}
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 
     /* Sections */
     section{padding:40px 0;border-bottom:1px solid #202026}
-    h2{margin:0 0 18px;font-size:clamp(1.3rem,3.5vw,2rem)}
+    h2{margin:0 0 18px;font-size:clamp(1.3rem,3.5vw,2rem); color: var(--accent)}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:16px}
+    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:20px; transition: all 0.3s ease}
+    .card:hover{transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2)}
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
@@ -67,7 +70,7 @@
 
     /* Forms */
     form{display:grid;gap:10px}
-    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:12px}
+    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:12px; width: 100%}
     textarea{min-height:120px}
     .inline{display:flex;gap:10px;flex-wrap:wrap}
     
@@ -76,7 +79,12 @@
     .hours div{padding:6px 0}
 
     /* Footer */
-    footer{padding:26px 0;color:#cfcfd4}
+    footer{padding:26px 0;color:#cfcfd4; text-align: center}
+    footer a{color: var(--accent); font-weight: 600}
+
+    /* Payment methods */
+    .payment-methods{display: flex; gap: 10px; margin-top: 10px}
+    .payment-method{background: #1a1a1e; padding: 8px 12px; border-radius: 8px; font-size: 0.9rem}
 
     /* Responsive */
     @media (max-width: 980px){
@@ -85,7 +93,24 @@
       .cta{display:none}
       #mobile.show{display:block}
       .hours{grid-template-columns:1fr}
+      .grid{grid-template-columns: 1fr; gap: 12px}
+      .card{grid-column: span 12 !important}
     }
+
+    @media (max-width: 768px) {
+      .hero-cta{flex-direction: column; align-items: flex-start}
+      .hero-cta .btn{width: 100%; text-align: center; justify-content: center}
+      .trainer{flex-direction: column; text-align: center}
+      .trainer .avatar{margin: 0 auto}
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section{animation: fadeIn 0.5s ease forwards}
   </style>
 </head>
 <body>
@@ -98,19 +123,17 @@
       </a>
 
       <nav class="menu" aria-label="Primary">
-        <a href="#bookings">Book Group Class</a>
-        <a href="#bookings">Book PT Session</a>
         <a href="#packages">Packages</a>
         <a href="#offers">Offers</a>
-        <a href="#gallery">Photo Gallery</a>
         <a href="#trainers">Trainers</a>
+        <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
-        <a href="#feedback">Feedback</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div class="cta">
         <a class="btn" href="tel:6384645968" aria-label="Call 6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank" rel="noopener">Google Directions</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -119,20 +142,16 @@
     </div>
     <div id="mobile" class="container">
       <nav class="menu" aria-label="Mobile">
-        <a href="#enquiry" onclick="closeMobile()">Enquiry</a>
-        <a href="#login" onclick="closeMobile()">Client Login</a>
-        <a href="#bookings" onclick="closeMobile()">Book Group Class</a>
-        <a href="#bookings" onclick="closeMobile()">Book PT Session</a>
         <a href="#packages" onclick="closeMobile()">Packages</a>
         <a href="#offers" onclick="closeMobile()">Offers</a>
-        <a href="#gallery" onclick="closeMobile()">Photo Gallery</a>
         <a href="#trainers" onclick="closeMobile()">Trainers</a>
+        <a href="#gallery" onclick="closeMobile()">Gallery</a>
         <a href="#reviews" onclick="closeMobile()">Reviews</a>
-        <a href="#feedback" onclick="closeMobile()">Feedback</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
       </nav>
       <div class="inline" style="padding:10px 0 6px">
         <a class="btn" href="tel:6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank" rel="noopener">Google Directions</a>
       </div>
     </div>
   </header>
@@ -142,10 +161,9 @@
     <h1>Where Hustle Meets Muscle 💪</h1>
     <p>Rise»Grind»Conquer<br>Elite Machines»Elite Physique<br>Pro Trainers»Transform»Build Legends</p>
     <div class="hero-cta">
-      <a class="btn primary" href="#enquiry">Enquiry</a>
-      <a class="btn" href="#bookings">Book Group Class</a>
-      <a class="btn" href="#bookings">Book PT Session</a>
-      <a class="btn" href="#login">Client Login</a>
+      <a class="btn primary" href="#enquiry">Enquire Now</a>
+      <a class="btn" href="#packages">View Packages</a>
+      <a class="btn" href="#contact">Visit Us</a>
     </div>
   </section>
 
@@ -164,9 +182,9 @@
 
   <!-- Enquiry -->
   <section class="container" id="enquiry">
-    <h2>Enquiry</h2>
+    <h2>Enquiry Form</h2>
     <div class="card">
-      <form id="enquiryForm" onsubmit="toast('Thanks! We\'ll contact you shortly.'); this.reset(); return false;">
+      <form id="enquiryForm">
         <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
           <input class="col" style="grid-column: span 6;" name="name" placeholder="Full Name" required>
           <input class="col" style="grid-column: span 6;" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
@@ -187,38 +205,9 @@
     </div>
   </section>
 
-  <!-- Client Login -->
-  <section class="container" id="login">
-    <h2>Client Login</h2>
-    <div class="card">
-      <p style="margin-top:0">Login to manage your memberships, classes, and payments.</p>
-      <div class="inline">
-        <a class="btn primary" href="#" onclick="toast('Redirecting to client portal...')">Open Client Portal</a>
-        <small style="color:var(--muted)">Powered by Easy Gym Software</small>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bookings -->
-  <section class="container" id="bookings">
-    <h2>Bookings</h2>
-    <div class="grid">
-      <div class="card" style="grid-column: span 6;">
-        <h3 style="margin-top:0">Book Group Class</h3>
-        <p class="muted">HIIT • Strength • Mobility • Conditioning</p>
-        <a class="btn primary" href="#" onclick="toast('Group class booking coming soon')">Book Now</a>
-      </div>
-      <div class="card" style="grid-column: span 6;">
-        <h3 style="margin-top:0">Book PT Session</h3>
-        <p class="muted">1:1 coaching tailored to your goals</p>
-        <a class="btn primary" href="#" onclick="toast('PT booking coming soon')">Book Now</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Packages -->
   <section class="container" id="packages">
-    <h2>Packages</h2>
+    <h2>Membership Packages</h2>
     <div class="grid">
       <div class="card" style="grid-column: span 4;">
         <h3>Basic Pack</h3>
@@ -289,7 +278,10 @@
       <div class="card" style="grid-column: span 6;">
         <h3>Payment Methods</h3>
         <p class="muted">We accept:</p>
-        <p>Cash • UPI</p>
+        <div class="payment-methods">
+          <div class="payment-method">Cash</div>
+          <div class="payment-method">UPI</div>
+        </div>
         <a class="btn" href="#enquiry">More Info</a>
       </div>
     </div>
@@ -311,7 +303,7 @@
 
   <!-- Trainers -->
   <section class="container" id="trainers">
-    <h2>Trainers</h2>
+    <h2>Our Trainer</h2>
     <div class="trainers">
       <div class="card trainer">
         <div class="avatar" aria-hidden="true"></div>
@@ -346,15 +338,33 @@
     </div>
   </section>
 
+  <!-- Contact -->
+  <section class="container" id="contact">
+    <h2>Contact Us</h2>
+    <div class="grid">
+      <div class="card" style="grid-column: span 6;">
+        <h3>Visit Our Gym</h3>
+        <p>SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
+        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank">Get Directions</a>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3>Call Us</h3>
+        <p>Our team is ready to answer your questions</p>
+        <a class="btn primary" href="tel:6384645968">Call: 6384645968</a>
+        <a class="btn" href="tel:8610209166">Call: 8610209166</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Feedback -->
   <section class="container" id="feedback">
-    <h2>Feedback</h2>
+    <h2>Send Us Feedback</h2>
     <div class="card">
-      <form onsubmit="toast('Thanks for your feedback!'); this.reset(); return false;">
+      <form id="feedbackForm">
         <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
-          <input style="grid-column: span 6;" placeholder="Name">
+          <input style="grid-column: span 6;" placeholder="Name" required>
           <input style="grid-column: span 6;" placeholder="Phone (optional)">
-          <textarea style="grid-column: span 12;" placeholder="Your feedback"></textarea>
+          <textarea style="grid-column: span 12;" placeholder="Your feedback" required></textarea>
         </div>
         <div class="inline" style="justify-content:flex-end">
           <button class="btn primary" type="submit">Send Feedback</button>
@@ -365,13 +375,11 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container inline" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
-      <div>
-        <strong>Call :</strong> <a href="tel:6384645968">6384645968</a> / <a href="tel:8610209166">8610209166</a> &nbsp;•&nbsp;
-        <a href="https://www.google.com/maps/embed?pb=!4v1756237872461!6m8!1m7!1svzZpI9FS_ncduNbalAh5UQ!2m2!1d9.935056900609794!2d78.04397202112106!3f193.8745572404977!4f19.334583613503256!5f0.7820865974627469" target="_blank" rel="noopener">Google Directions</a>
-      </div>
-      <div>SVN College Opposite, Nagamalai, Pudukkottai, Madurai</div>
-      <div>Powered by <strong>Easy Gym Software</strong></div>
+    <div class="container">
+      <p><strong>Delta Fitness</strong> • SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
+      <p>Call: <a href="tel:6384645968">6384645968</a> • <a href="tel:8610209166">8610209166</a></p>
+      <p>Designed by <strong>Rishibala Murugan</strong></p>
+      <p>© 2023 Delta Fitness. All rights reserved.</p>
     </div>
   </footer>
 
@@ -393,6 +401,21 @@
       clearTimeout(window.__t);
       window.__t = setTimeout(()=>{ t.style.opacity=0; t.style.transform='translateX(-50%) scale(.98)'; }, 2200);
     }
+
+    // Form handling
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real implementation, you would send this data to a server
+      toast('Thanks for your enquiry! We will contact you shortly.');
+      this.reset();
+    });
+
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real implementation, you would send this data to a server
+      toast('Thank you for your feedback!');
+      this.reset();
+    });
   </script>
 </body>
 </html>
