@@ -18,20 +18,19 @@
     }
     *{box-sizing:border-box; margin:0; padding:0}
     html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;line-height:1.5}
+    body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;line-height:1.6}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
     header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-    .brand .delta{width:28px;height:28px;border:2px solid var(--text);clip-path:polygon(50% 0, 0 100%, 100% 100%);position:relative}
-    .brand .delta::after{content:"";position:absolute;inset:3px;border:2px solid var(--accent);clip-path:polygon(50% 0, 0 100%, 100% 100%)}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.2rem}
+    .logo{width:40px;height:40px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
-    .menu a{padding:8px 10px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
+    .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
     .menu a:hover{background:var(--accent); color: white}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31; transition: all 0.3s ease}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31; transition: all 0.3s ease}
     .btn:hover{transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3)}
     .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 0 0 0 var(--ring)}
     .btn.primary:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
@@ -40,51 +39,53 @@
     .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px; background: transparent}
     .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0; transition: all 0.3s ease}
     #mobile{display:none;padding:10px 0;border-top:1px solid #232326}
-    #mobile .menu{flex-direction:column;align-items:flex-start}
+    #mobile .menu{flex-direction:column;align-items:flex-start;gap:10px}
 
     /* Hero */
-    .hero{padding:56px 0 40px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(157,13,43,.22), transparent 60%)}
-    .hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:0 0 10px;font-weight:800;letter-spacing:.02em}
-    .hero p{margin:0 0 22px;color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem)}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .hero{padding:60px 0 50px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(157,13,43,.22), transparent 60%)}
+    .hero h1{font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.1;margin:0 0 16px;font-weight:900;letter-spacing:.02em}
+    .hero p{margin:0 0 28px;color:var(--muted);font-size:clamp(1.1rem,2.4vw,1.3rem);line-height:1.6}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 
     /* Sections */
-    section{padding:40px 0;border-bottom:1px solid #202026}
-    h2{margin:0 0 18px;font-size:clamp(1.3rem,3.5vw,2rem); color: var(--accent)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:20px; transition: all 0.3s ease}
+    section{padding:50px 0;border-bottom:1px solid #202026}
+    h2{margin:0 0 24px;font-size:clamp(1.5rem,3.5vw,2.2rem); color: var(--accent); font-weight:800}
+    h3{margin:0 0 12px; font-size:1.3rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:24px; transition: all 0.3s ease; margin-bottom: 8px}
     .card:hover{transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2)}
 
     /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
     .gallery .ph{aspect-ratio:1.2/1;border-radius:12px;background:linear-gradient(160deg,#2a2a30,#1a1a1e);border:1px solid #2a2a31}
 
     /* Trainers */
-    .trainers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .trainer{display:flex;gap:12px}
-    .avatar{width:72px;height:72px;border-radius:16px;background:#222228;border:1px solid #2a2a31}
+    .trainers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .trainer{display:flex;gap:16px;align-items:center}
+    .avatar{width:80px;height:80px;border-radius:16px;background:#222228;border:1px solid #2a2a31;flex-shrink:0}
 
     /* Reviews */
-    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .stars{letter-spacing:2px;color:#ffd166}
+    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .stars{letter-spacing:2px;color:#ffd166;margin-bottom:8px}
 
     /* Forms */
-    form{display:grid;gap:10px}
-    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:12px; width: 100%}
-    textarea{min-height:120px}
-    .inline{display:flex;gap:10px;flex-wrap:wrap}
+    form{display:grid;gap:14px}
+    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:14px; width: 100%; font-size:1rem}
+    textarea{min-height:130px}
+    .inline{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
     
     /* Hours */
-    .hours{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .hours div{padding:6px 0}
+    .hours{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .hours div{padding:8px 0}
 
     /* Footer */
-    footer{padding:26px 0;color:#cfcfd4; text-align: center}
+    footer{padding:30px 0;color:#cfcfd4; text-align: center}
     footer a{color: var(--accent); font-weight: 600}
+    footer .container{display:flex;flex-direction:column;gap:12px}
 
     /* Payment methods */
-    .payment-methods{display: flex; gap: 10px; margin-top: 10px}
-    .payment-method{background: #1a1a1e; padding: 8px 12px; border-radius: 8px; font-size: 0.9rem}
+    .payment-methods{display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap}
+    .payment-method{background: #1a1a1e; padding: 10px 14px; border-radius:8px; font-size: 0.9rem}
 
     /* Responsive */
     @media (max-width: 980px){
@@ -93,15 +94,28 @@
       .cta{display:none}
       #mobile.show{display:block}
       .hours{grid-template-columns:1fr}
-      .grid{grid-template-columns: 1fr; gap: 12px}
+      .grid{grid-template-columns: 1fr; gap: 16px}
       .card{grid-column: span 12 !important}
     }
 
     @media (max-width: 768px) {
-      .hero-cta{flex-direction: column; align-items: flex-start}
-      .hero-cta .btn{width: 100%; text-align: center; justify-content: center}
+      .hero-cta{flex-direction: column; align-items: stretch}
+      .hero-cta .btn{width: 100%; text-align: center; justify-content: center; margin-bottom: 8px}
       .trainer{flex-direction: column; text-align: center}
       .trainer .avatar{margin: 0 auto}
+      .inline{flex-direction: column; align-items: stretch}
+      .payment-methods{justify-content: center}
+      .brand{font-size: 1.1rem}
+      .brand .logo{width:36px;height:36px}
+    }
+
+    @media (max-width: 480px) {
+      .container{padding: 0 16px}
+      .hero{padding: 40px 0 30px}
+      section{padding: 40px 0}
+      .hero h1{font-size: 2rem}
+      .card{padding: 20px}
+      .btn{padding: 10px 14px}
     }
 
     /* Animation */
@@ -111,6 +125,11 @@
     }
     
     section{animation: fadeIn 0.5s ease forwards}
+    
+    /* Improved spacing */
+    p, ul, ol {margin-bottom: 1.2em}
+    ul {padding-left: 1.8em}
+    li {margin-bottom: 0.6em}
   </style>
 </head>
 <body>
@@ -118,8 +137,8 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Delta Fitness Home">
-        <span class="delta" aria-hidden="true"></span>
-        <span>Delta Fitness</span>
+        <div class="logo">DF</div>
+        <span>DELTA FITNESS</span>
       </a>
 
       <nav class="menu" aria-label="Primary">
@@ -132,8 +151,8 @@
       </nav>
 
       <div class="cta">
-        <a class="btn" href="tel:6384645968" aria-label="Call 6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn" href="tel:8610209166" aria-label="Call 6384645968">Call : 8610209166</a>
+        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank" rel="noopener">Google Directions</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -149,17 +168,17 @@
         <a href="#reviews" onclick="closeMobile()">Reviews</a>
         <a href="#contact" onclick="closeMobile()">Contact</a>
       </nav>
-      <div class="inline" style="padding:10px 0 6px">
+      <div class="inline" style="padding:12px 0 8px">
         <a class="btn" href="tel:6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank" rel="noopener">Google Directions</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero container" id="top">
-    <h1>Where Hustle Meets Muscle 💪</h1>
-    <p>Rise»Grind»Conquer<br>Elite Machines»Elite Physique<br>Pro Trainers»Transform»Build Legends</p>
+    <h1>Where Hustle Meets Muscle</h1>
+    <p>Rise » Grind » Conquer<br>Elite Machines » Elite Physique<br>Pro Trainers » Transform » Build Legends</p>
     <div class="hero-cta">
       <a class="btn primary" href="#enquiry">Enquire Now</a>
       <a class="btn" href="#packages">View Packages</a>
@@ -185,7 +204,7 @@
     <h2>Enquiry Form</h2>
     <div class="card">
       <form id="enquiryForm">
-        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
+        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:16px;">
           <input class="col" style="grid-column: span 6;" name="name" placeholder="Full Name" required>
           <input class="col" style="grid-column: span 6;" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
           <input class="col" style="grid-column: span 12;" name="email" type="email" placeholder="Email (optional)">
@@ -211,37 +230,37 @@
     <div class="grid">
       <div class="card" style="grid-column: span 4;">
         <h3>Basic Pack</h3>
-        <p class="muted">1 Month Membership</p>
+        <p>1 Month Membership</p>
         <p><strong>₹1,500</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
         <h3>3 Months</h3>
-        <p class="muted">Standard membership</p>
+        <p>Standard membership</p>
         <p><strong>₹3,500</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
         <h3>6 Months</h3>
-        <p class="muted">Extended membership</p>
+        <p>Extended membership</p>
         <p><strong>₹6,000</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
         <h3>1 Year</h3>
-        <p class="muted">Annual membership</p>
+        <p>Annual membership</p>
         <p><strong>₹10,000</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
         <h3>Student Pack</h3>
-        <p class="muted">Budget friendly for students</p>
+        <p>Budget friendly for students</p>
         <p><strong>₹1,000/month</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
       <div class="card" style="grid-column: span 4;">
         <h3>Elite Training</h3>
-        <p class="muted">Customized workout plans</p>
+        <p>Customized workout plans</p>
         <p><strong>₹6,000/month</strong></p>
         <a class="btn" href="#enquiry">Enquire</a>
       </div>
@@ -254,7 +273,7 @@
     <div class="grid">
       <div class="card" style="grid-column: span 6;">
         <h3>Women's Exclusive Offer</h3>
-        <ul style="margin:0 0 10px 18px">
+        <ul>
           <li>FREE Diet Plan Consultation (once every 2 months)</li>
           <li>Buddy Pass - Bring a female friend for 1 week free (once every 3 months)</li>
         </ul>
@@ -262,8 +281,8 @@
       </div>
       <div class="card" style="grid-column: span 6;">
         <h3>Gym Opening Offers</h3>
-        <p class="muted">For students below 20 years</p>
-        <ul style="margin:0 0 10px 18px">
+        <p>For students below 20 years</p>
+        <ul>
           <li>3 Months (₹3,500) - Get +1 Extra Month Free</li>
           <li>6 Months (₹6,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
           <li>1 Year (₹10,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
@@ -272,12 +291,12 @@
       </div>
       <div class="card" style="grid-column: span 6;">
         <h3>Corporate Offer</h3>
-        <p class="muted">Join 4 and add 1 person free</p>
+        <p>Pay for 4, Train 5</p>
         <a class="btn primary" href="#enquiry">Enquire Now</a>
       </div>
       <div class="card" style="grid-column: span 6;">
         <h3>Payment Methods</h3>
-        <p class="muted">We accept:</p>
+        <p>We accept:</p>
         <div class="payment-methods">
           <div class="payment-method">Cash</div>
           <div class="payment-method">UPI</div>
@@ -298,7 +317,7 @@
       <div class="ph"></div>
       <div class="ph"></div>
     </div>
-    <p style="color:var(--muted);margin-top:10px">Gallery space reserved for future images of our facilities and equipment.</p>
+    <p style="color:var(--muted);margin-top:16px">Gallery space reserved for future images of our facilities and equipment.</p>
   </section>
 
   <!-- Trainers -->
@@ -309,7 +328,7 @@
         <div class="avatar" aria-hidden="true"></div>
         <div>
           <strong>Jeeva</strong>
-          <div class="muted" style="color:var(--muted)">Empowering every workout with strength, discipline, and results</div>
+          <p style="color:var(--muted); margin:8px 0">Empowering every workout with strength, discipline, and results</p>
           <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
         </div>
       </div>
@@ -323,17 +342,17 @@
       <div class="card">
         <div class="stars">★★★★★</div>
         <p>Space reserved for future customer reviews and testimonials.</p>
-        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
         <div class="stars">★★★★★</div>
         <p>Space reserved for future customer reviews and testimonials.</p>
-        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
         <div class="stars">★★★★★</div>
         <p>Space reserved for future customer reviews and testimonials.</p>
-        <small class="muted" style="color:var(--muted)">— Coming Soon</small>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
     </div>
   </section>
@@ -345,7 +364,7 @@
       <div class="card" style="grid-column: span 6;">
         <h3>Visit Our Gym</h3>
         <p>SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
-        <a class="btn primary" href="https://goo.gl/maps/3JkKq9Z7Z7Z7" target="_blank">Get Directions</a>
+        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank">Get Directions</a>
       </div>
       <div class="card" style="grid-column: span 6;">
         <h3>Call Us</h3>
@@ -361,7 +380,7 @@
     <h2>Send Us Feedback</h2>
     <div class="card">
       <form id="feedbackForm">
-        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
+        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:16px;">
           <input style="grid-column: span 6;" placeholder="Name" required>
           <input style="grid-column: span 6;" placeholder="Phone (optional)">
           <textarea style="grid-column: span 12;" placeholder="Your feedback" required></textarea>
@@ -376,10 +395,10 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p><strong>Delta Fitness</strong> • SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
+      <p><strong>DELTA FITNESS</strong> • SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
       <p>Call: <a href="tel:6384645968">6384645968</a> • <a href="tel:8610209166">8610209166</a></p>
       <p>Designed by <strong>Rishibala Murugan</strong></p>
-      <p>© 2023 Delta Fitness. All rights reserved.</p>
+      <p>© 2025 Delta Fitness. All rights reserved.</p>
     </div>
   </footer>
 
