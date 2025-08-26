@@ -3,56 +3,353 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Delta Fitness — Coming Soon</title>
-  <meta name="description" content="Delta Fitness — premium training, certified coaches, and a results-driven community. Coming soon." />
+  <title>Delta Fitness • Madurai</title>
+  <meta name="description" content="Delta Fitness – Premium training, certified coaches, and a results‑driven community in Madurai. Book classes, PT sessions, explore packages, offers, trainers, gallery, reviews, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      margin: 0;
+    :root{
+      --bg:#0b0b0c; --card:#141417; --muted:#9aa0a6; --text:#f5f7fb; --accent:#e11d48; /* rose-600 */
+      --accent-2:#ef4444; /* red-500 */
+      --ring: rgba(225,29,72,.4);
+      --maxw:1200px;
     }
-    body {
-      background: #000;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      padding: 0 1.2rem;
-    }
-    h1 {
-      margin: 0 0 .5rem 0;
-      letter-spacing: .06em;
-      font-weight: 800;
-      font-size: clamp(2rem, 8vw, 5rem);
-      text-transform: uppercase;
-    }
-    p {
-      margin: 0;
-      opacity: .92;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-    }
-    .footer {
-      margin-top: auto;
-      padding: 1rem 0;
-      color: #cfcfcf;
-      font-size: .95rem;
-    }
-    .footer a {
-      color: inherit;
-      text-decoration: underline;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(11,11,12,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .brand .delta{width:28px;height:28px;border:2px solid var(--text);clip-path:polygon(50% 0, 0 100%, 100% 100%);position:relative}
+    .brand .delta::after{content:"";position:absolute;inset:3px;border:2px solid var(--accent);clip-path:polygon(50% 0, 0 100%, 100% 100%)}
+    .menu{display:flex;gap:14px;flex-wrap:wrap}
+    .menu a{padding:8px 10px;border-radius:10px;color:#e8eaed}
+    .menu a:hover{background:#1e1e22}
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 0 0 0 var(--ring)}
+    .btn.primary:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
+
+    /* Mobile menu */
+    .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px}
+    .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0}
+    #mobile{display:none;padding:10px 0;border-top:1px solid #232326}
+    #mobile .menu{flex-direction:column;align-items:flex-start}
+
+    /* Hero */
+    .hero{padding:56px 0 40px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(225,29,72,.22), transparent 60%)}
+    .hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:0 0 10px;font-weight:800;letter-spacing:.02em}
+    .hero p{margin:0 0 22px;color:var(--muted);font-size:clamp(1rem,2.4vw,1.2rem)}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* Sections */
+    section{padding:40px 0;border-bottom:1px solid #202026}
+    h2{margin:0 0 18px;font-size:clamp(1.3rem,3.5vw,2rem)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:16px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+    .gallery .ph{aspect-ratio:1.2/1;border-radius:12px;background:linear-gradient(160deg,#2a2a30,#1a1a1e);border:1px solid #2a2a31}
+
+    /* Trainers */
+    .trainers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .trainer{display:flex;gap:12px}
+    .avatar{width:72px;height:72px;border-radius:16px;background:#222228;border:1px solid #2a2a31}
+
+    /* Reviews */
+    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .stars{letter-spacing:2px;color:#ffd166}
+
+    /* Forms */
+    form{display:grid;gap:10px}
+    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:12px}
+    textarea{min-height:120px}
+    .inline{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{padding:26px 0;color:#cfcfd4}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .menu{display:none}
+      .burger{display:block}
+      .cta{display:none}
+      #mobile.show{display:block}
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Delta Fitness</h1>
-    <p>Where Hustle Meets Muscle — Opening Soon</p>
-  </main>
-  <div class="footer">
-    © 2025 Delta Fitness · Madurai · Follow us on Instagram: @deltafitness
-  </div>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Delta Fitness Home">
+        <span class="delta" aria-hidden="true"></span>
+        <span>Delta Fitness</span>
+      </a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#bookings">Book Group Class</a>
+        <a href="#bookings">Book PT Session</a>
+        <a href="#packages">Packages</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Photo Gallery</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#feedback">Feedback</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="tel:8667002484" aria-label="Call 8667002484">Call : 8667002484</a>
+        <a class="btn primary" href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile" class="container">
+      <nav class="menu" aria-label="Mobile">
+        <a href="#enquiry" onclick="closeMobile()">Enquiry</a>
+        <a href="#login" onclick="closeMobile()">Client Login</a>
+        <a href="#bookings" onclick="closeMobile()">Book Group Class</a>
+        <a href="#bookings" onclick="closeMobile()">Book PT Session</a>
+        <a href="#packages" onclick="closeMobile()">Packages</a>
+        <a href="#offers" onclick="closeMobile()">Offers</a>
+        <a href="#gallery" onclick="closeMobile()">Photo Gallery</a>
+        <a href="#trainers" onclick="closeMobile()">Trainers</a>
+        <a href="#reviews" onclick="closeMobile()">Reviews</a>
+        <a href="#feedback" onclick="closeMobile()">Feedback</a>
+      </nav>
+      <div class="inline" style="padding:10px 0 6px">
+        <a class="btn" href="tel:8667002484">Call : 8667002484</a>
+        <a class="btn primary" href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container" id="top">
+    <h1>Stronger Every Delta</h1>
+    <p>Premium strength & conditioning gym in Madurai. Flexible packages, expert trainers, and results you can feel.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#enquiry">Enquiry</a>
+      <a class="btn" href="#bookings">Book Group Class</a>
+      <a class="btn" href="#bookings">Book PT Session</a>
+      <a class="btn" href="#login">Client Login</a>
+    </div>
+  </section>
+
+  <!-- Enquiry -->
+  <section class="container" id="enquiry">
+    <h2>Enquiry</h2>
+    <div class="card">
+      <form id="enquiryForm" onsubmit="toast('Thanks! We\'ll contact you shortly.'); this.reset(); return false;">
+        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
+          <input class="col" style="grid-column: span 6;" name="name" placeholder="Full Name" required>
+          <input class="col" style="grid-column: span 6;" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
+          <input class="col" style="grid-column: span 12;" name="email" type="email" placeholder="Email (optional)">
+          <select class="col" style="grid-column: span 6;" name="interest">
+            <option value="Group Class">Group Class</option>
+            <option value="Personal Training">Personal Training</option>
+            <option value="Weight Loss">Weight Loss</option>
+            <option value="Strength">Strength</option>
+          </select>
+          <input class="col" style="grid-column: span 6;" name="time" placeholder="Preferred Time (e.g., 6 AM)">
+          <textarea class="col" style="grid-column: span 12;" name="message" placeholder="Tell us your goal"></textarea>
+        </div>
+        <div class="inline" style="justify-content:flex-end">
+          <button class="btn primary" type="submit">Submit Enquiry</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Client Login -->
+  <section class="container" id="login">
+    <h2>Client Login</h2>
+    <div class="card">
+      <p style="margin-top:0">Login to manage your memberships, classes, and payments.</p>
+      <div class="inline">
+        <a class="btn primary" href="#" onclick="toast('Redirecting to client portal...')">Open Client Portal</a>
+        <small style="color:var(--muted)">Powered by Easy Gym Software</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bookings -->
+  <section class="container" id="bookings">
+    <h2>Bookings</h2>
+    <div class="grid">
+      <div class="card" style="grid-column: span 6;">
+        <h3 style="margin-top:0">Book Group Class</h3>
+        <p class="muted">HIIT • Strength • Mobility • Conditioning</p>
+        <a class="btn primary" href="#" onclick="toast('Group class booking coming soon')">Book Now</a>
+      </div>
+      <div class="card" style="grid-column: span 6;">
+        <h3 style="margin-top:0">Book PT Session</h3>
+        <p class="muted">1:1 coaching tailored to your goals</p>
+        <a class="btn primary" href="#" onclick="toast('PT booking coming soon')">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="container" id="packages">
+    <h2>Packages</h2>
+    <div class="grid">
+      <div class="card" style="grid-column: span 4;">
+        <h3>Monthly</h3>
+        <p class="muted">Unlimited gym access</p>
+        <p><strong>₹1,999</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+      <div class="card" style="grid-column: span 4;">
+        <h3>Quarterly</h3>
+        <p class="muted">Save more, stay consistent</p>
+        <p><strong>₹5,499</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+      <div class="card" style="grid-column: span 4;">
+        <h3>Annual</h3>
+        <p class="muted">Best value + perks</p>
+        <p><strong>₹18,999</strong></p>
+        <a class="btn" href="#enquiry">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section class="container" id="offers">
+    <h2>Offers</h2>
+    <div class="card">
+      <ul style="margin:0 0 10px 18px">
+        <li>Student Discount: 10% OFF (valid ID required)</li>
+        <li>Buddy Pass: Bring a friend free for 7 days</li>
+        <li>Festival Offer: Extra PT session on annual sign‑ups</li>
+      </ul>
+      <a class="btn primary" href="#enquiry">Claim Offer</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="container" id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+      <div class="ph"></div>
+    </div>
+    <p style="color:var(--muted);margin-top:10px">Add your photos by replacing these placeholders with real images (e.g., <code>&lt;img src="/images/leg-press.jpg" alt="Leg press" /&gt;</code>).</p>
+  </section>
+
+  <!-- Trainers -->
+  <section class="container" id="trainers">
+    <h2>Trainers</h2>
+    <div class="trainers">
+      <div class="card trainer">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>Arun Kumar</strong>
+          <div class="muted" style="color:var(--muted)">Strength & Conditioning • 7 yrs</div>
+          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
+        </div>
+      </div>
+      <div class="card trainer">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>Priya S</strong>
+          <div class="muted" style="color:var(--muted)">Weight Loss & Mobility • 5 yrs</div>
+          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
+        </div>
+      </div>
+      <div class="card trainer">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <strong>Vishal R</strong>
+          <div class="muted" style="color:var(--muted)">Hypertrophy & PT • 6 yrs</div>
+          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="container" id="reviews">
+    <h2>Reviews</h2>
+    <div class="reviews">
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>Best vibes, solid equipment, and trainers who actually care about form.</p>
+        <small class="muted" style="color:var(--muted)">— Sanjay</small>
+      </div>
+      <div class="card">
+        <div class="stars">★★★★★</div>
+        <p>Joined for weight loss, stayed for the community. Results in 8 weeks!</p>
+        <small class="muted" style="color:var(--muted)">— Meera</small>
+      </div>
+      <div class="card">
+        <div class="stars">★★★★☆</div>
+        <p>Great PT sessions and flexible timings. Highly recommended.</p>
+        <small class="muted" style="color:var(--muted)">— Rahul</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback -->
+  <section class="container" id="feedback">
+    <h2>Feedback</h2>
+    <div class="card">
+      <form onsubmit="toast('Thanks for your feedback!'); this.reset(); return false;">
+        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:12px;">
+          <input style="grid-column: span 6;" placeholder="Name">
+          <input style="grid-column: span 6;" placeholder="Phone (optional)">
+          <textarea style="grid-column: span 12;" placeholder="Your feedback"></textarea>
+        </div>
+        <div class="inline" style="justify-content:flex-end">
+          <button class="btn primary" type="submit">Send Feedback</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container inline" style="justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div>
+        <strong>Call :</strong> <a href="tel:8667002484">8667002484</a> &nbsp;•&nbsp;
+        <a href="https://www.google.com/maps?q=Delta+Fitness+Madurai" target="_blank" rel="noopener">Google Directions</a>
+      </div>
+      <div>Powered by <strong>Easy Gym Software</strong></div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%) scale(.98);opacity:0;transition:.25s;z-index:60;background:#101015;border:1px solid #2a2a31;padding:12px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)"></div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobile = document.getElementById('mobile');
+    burger?.addEventListener('click', () => {
+      const on = mobile.classList.toggle('show');
+      burger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+    function closeMobile(){ mobile.classList.remove('show'); burger.setAttribute('aria-expanded','false'); }
+
+    function toast(msg){
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.style.opacity=1; t.style.transform='translateX(-50%) scale(1)';
+      clearTimeout(window.__t);
+      window.__t = setTimeout(()=>{ t.style.opacity=0; t.style.transform='translateX(-50%) scale(.98)'; }, 2200);
+    }
+  </script>
 </body>
 </html>
+
