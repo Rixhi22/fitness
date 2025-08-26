@@ -24,9 +24,8 @@
     .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
     header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem}
-    .brand span:first-child{color: var(--accent)}
-    .brand span:last-child{color: var(--accent)}
+    .brand{display:flex;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem}
+    .brand .red{color: var(--accent)}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
     .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
     .menu a:hover{background:var(--accent); color: white}
@@ -126,6 +125,7 @@
       
       .trainer-info p {
         margin: 8px 0;
+        font-size: 0.95rem;
       }
       
       .payment-methods {
@@ -143,6 +143,10 @@
       .reviews .card {
         min-height: auto;
         padding: 18px;
+      }
+      
+      .reviews .card p {
+        font-size: 0.95rem;
       }
     }
 
@@ -172,6 +176,14 @@
       
       .trainer-info {
         text-align: center;
+      }
+      
+      .trainer-info p {
+        font-size: 0.9rem;
+      }
+      
+      .reviews .card p {
+        font-size: 0.9rem;
       }
     }
 
@@ -216,10 +228,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Delta Fitness Home">
-        <span>D</span>
-        <span>ELTA</span>
-        <span>F</span>
-        <span>ITNESS</span>
+        <span class="red">D</span>ELTA <span class="red">F</span>ITNESS
       </a>
 
       <nav class="menu" aria-label="Primary">
@@ -422,18 +431,18 @@
     <div class="reviews">
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Best vibes, solid equipment, and trainers who actually care about form.</p>
-        <small style="color:var(--muted)">— Sanjay</small>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
         <div class="stars">★★★★★</div>
-        <p>Joined for weight loss, stayed for the community. Results in 8 weeks!</p>
-        <small style="color:var(--muted)">— Meera</small>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
       <div class="card">
-        <div class="stars">★★★★☆</div>
-        <p>Great PT sessions and flexible timings. Highly recommended.</p>
-        <small style="color:var(--muted)">— Rahul</small>
+        <div class="stars">★★★★★</div>
+        <p>Space reserved for future customer reviews and testimonials.</p>
+        <small style="color:var(--muted)">— Coming Soon</small>
       </div>
     </div>
   </section>
