@@ -4,222 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
   <title>Delta Fitness • Madurai</title>
-  <meta name="description" content="Delta Fitness – Premium training, certified coaches, and a results‑driven community in Madurai. Book classes, PT sessions, explore packages, offers, trainers, gallery, reviews, and more." />
+  <meta name="description" content="Delta Fitness – Premium training, certified coaches, and a results-driven community in Madurai. Book classes, PT sessions, explore packages, offers, trainers, gallery, reviews, and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0b0b0c; --card:#141417; --muted:#9aa0a6; --text:#f5f7fb; 
-      --accent:#9d0d2b; /* Darker red */
-      --accent-2:#7a0a21; /* Even darker red */
+      --accent:#9d0d2b;
+      --accent-2:#7a0a21;
       --ring: rgba(157,13,43,.4);
       --maxw:1200px;
     }
     *{box-sizing:border-box; margin:0; padding:0}
-    html,body{height:100%; overflow-x: hidden}
-    body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;line-height:1.6}
+    html,body{height:100%; overflow-x:hidden}
+    body{margin:0;background:radial-gradient(1200px 600px at 70% -20%, #1f1f25 0%, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+
+    /* Header */
     header{position:sticky;top:0;background:rgba(11,11,12,.95);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #232326;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem}
-    .brand .red{color: var(--accent)}
+    .brand{display:flex;align-items:center;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.6rem;gap:6px}
+    .brand .red{color:var(--accent)}
     .menu{display:flex;gap:14px;flex-wrap:wrap}
-    .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed; transition: all 0.3s ease}
-    .menu a:hover{background:var(--accent); color: white}
+    .menu a{padding:8px 12px;border-radius:10px;color:#e8eaed;transition:.3s}
+    .menu a:hover{background:var(--accent);color:white}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31; transition: all 0.3s ease}
-    .btn:hover{transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 0 0 0 var(--ring)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:#1e1e22;border:1px solid #2a2a31;transition:.3s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none}
     .btn.primary:focus{outline:none;box-shadow:0 0 0 6px var(--ring)}
 
     /* Mobile menu */
-    .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px; background: transparent}
-    .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0; transition: all 0.3s ease}
+    .burger{display:none;cursor:pointer;border:1px solid #2a2a31;border-radius:10px;padding:8px;background:transparent}
+    .burger span{display:block;width:22px;height:2px;background:#e8eaed;margin:4px 0;transition:.3s}
     #mobile{display:none;padding:10px 0;border-top:1px solid #232326}
     #mobile .menu{flex-direction:column;align-items:flex-start;gap:10px}
 
-    /* Hero */
-    .hero{padding:80px 0 60px;border-bottom:1px solid #202026;background:radial-gradient(700px 240px at 20% -10%, rgba(157,13,43,.22), transparent 60%)}
-    .hero h1{font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.1;margin:0 0 20px;font-weight:900;letter-spacing:.02em}
-    .hero p{margin:0 0 32px;color:var(--muted);font-size:clamp(1.2rem,2.8vw,1.5rem);line-height:1.6}
-    .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
-
     /* Sections */
     section{padding:60px 0;border-bottom:1px solid #202026}
-    h2{margin:0 0 28px;font-size:clamp(1.8rem,4vw,2.5rem); color: var(--accent); font-weight:800}
-    h3{margin:0 0 16px; font-size:1.5rem}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
-    .card{background:var(--card);border:1px solid #23232a;border-radius:16px;padding:28px; transition: all 0.3s ease; margin-bottom: 12px}
-    .card:hover{transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2)}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-    .gallery .ph{aspect-ratio:1.2/1;border-radius:12px;background:linear-gradient(160deg,#2a2a30,#1a1a1e);border:1px solid #2a2a31}
-
-    /* Trainers */
-    .trainers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-    .trainer{display:flex;gap:20px;align-items:center}
-    .avatar{width:90px;height:90px;border-radius:16px;background:#222228;border:1px solid #2a2a31;flex-shrink:0}
-
-    /* Reviews */
-    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-    .reviews .card{padding:20px; min-height:180px; display:flex; flex-direction:column; justify-content:space-between}
-    .stars{letter-spacing:2px;color:#ffd166;margin-bottom:12px}
-
-    /* Forms */
-    form{display:grid;gap:16px}
-    input, textarea, select{background:#0f0f12;border:1px solid #2a2a31;color:var(--text);border-radius:12px;padding:16px; width: 100%; font-size:1.1rem}
-    textarea{min-height:140px}
-    .inline{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-    
-    /* Hours */
-    .hours{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .hours div{padding:10px 0}
-
-    /* Footer */
-    footer{padding:40px 0;color:#cfcfd4; text-align: center}
-    footer a{color: var(--accent); font-weight: 600}
-    footer .container{display:flex;flex-direction:column;gap:16px}
-
-    /* Payment methods */
-    .payment-methods{display: flex; gap: 14px; margin-top: 16px; flex-wrap: wrap; justify-content: center}
-    .payment-method{background: #1a1a1e; padding: 12px 16px; border-radius:10px; font-size: 1rem; white-space: nowrap}
+    h2{margin:0 0 28px;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--accent);font-weight:800}
+    h3{margin:0 0 16px;font-size:1.5rem}
 
     /* Responsive */
-    @media (max-width: 1200px) {
-      .container{padding: 0 30px}
-    }
-
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .menu{display:none}
       .burger{display:block}
       .cta{display:none}
       #mobile.show{display:block}
-      .hours{grid-template-columns:1fr}
-      .grid{grid-template-columns: 1fr; gap: 20px}
-      .card{grid-column: span 12 !important; padding: 24px}
-      .brand{font-size: 1.5rem}
+      .brand{font-size:1.5rem}
     }
-
-    @media (max-width: 768px) {
-      .container{padding: 0 20px}
-      .hero{padding: 60px 0 40px}
-      .hero-cta{flex-direction: column; align-items: stretch}
-      .hero-cta .btn{width: 100%; text-align: center; justify-content: center; margin-bottom: 12px}
-      .trainer{flex-direction: column; text-align: center; gap: 16px}
-      .trainer .avatar{margin: 0 auto}
-      .inline{flex-direction: column; align-items: stretch}
-      .payment-methods{justify-content: center; gap: 12px}
-      .brand{font-size: 1.4rem}
-      section{padding: 50px 0}
-      
-      /* Fix text fitting issues */
-      .trainer-info, .reviews .card, .payment-container {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        width: 100%;
-      }
-      
-      .trainer-info p {
-        margin: 8px 0;
-        font-size: 1rem;
-      }
-      
-      .payment-methods {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .payment-method {
-        width: 100%;
-        text-align: center;
-        white-space: normal;
-        padding: 10px;
-      }
-      
-      .reviews .card {
-        min-height: auto;
-        padding: 18px;
-      }
-      
-      .reviews .card p {
-        font-size: 1rem;
-      }
+    @media (max-width:768px){
+      .hero{padding:60px 0 40px}
+      .hero-cta{flex-direction:column;align-items:stretch}
+      .hero-cta .btn{width:100%;text-align:center;justify-content:center;margin-bottom:12px}
+      .brand{font-size:1.4rem}
     }
-
-    @media (max-width: 480px) {
-      .container{padding: 0 16px}
-      .hero{padding: 50px 0 30px}
-      .hero h1{font-size: 2rem}
-      section{padding: 40px 0}
-      .card{padding: 20px}
-      .btn{padding: 14px 16px}
-      .brand{font-size: 1.3rem}
-      h2{font-size: 1.6rem}
-      
-      /* Additional mobile fixes */
-      .trainer {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .reviews .card {
-        padding: 16px;
-      }
-      
-      .payment-container {
-        padding: 15px;
-      }
-      
-      .trainer-info {
-        text-align: center;
-      }
-      
-      .trainer-info p {
-        font-size: 0.95rem;
-      }
-      
-      .reviews .card p {
-        font-size: 0.95rem;
-      }
-    }
-
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    section{animation: fadeIn 0.5s ease forwards}
-    
-    /* Improved spacing */
-    p, ul, ol {margin-bottom: 1.4em}
-    ul {padding-left: 2em}
-    li {margin-bottom: 0.8em}
-    
-    /* Viewport fix */
-    @viewport {
-      width: device-width;
-      zoom: 1.0;
-    }
-    
-    /* Specific fixes for text fitting */
-    .trainer-info {
-      min-width: 0; /* Allows text to wrap properly */
-    }
-    
-    .reviews .card p {
-      word-break: break-word;
-      margin-bottom: 12px;
-    }
-    
-    .payment-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    @media (max-width:480px){
+      .brand{font-size:1.2rem}
     }
   </style>
 </head>
@@ -228,7 +72,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Delta Fitness Home">
-        <span class="red">D</span>ELTA<span class="red">F</span>ITNESS
+        <span class="red">D</span>ELTA <span class="red">F</span>ITNESS
       </a>
 
       <nav class="menu" aria-label="Primary">
@@ -241,16 +85,16 @@
       </nav>
 
       <div class="cta">
-        <a class="btn" href="tel:6384645968" aria-label="Call 6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn" href="tel:6384645968">Call : 6384645968</a>
+        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank">Google Directions</a>
       </div>
 
-      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="burger" id="burger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div id="mobile" class="container">
-      <nav class="menu" aria-label="Mobile">
+      <nav class="menu">
         <a href="#packages" onclick="closeMobile()">Packages</a>
         <a href="#offers" onclick="closeMobile()">Offers</a>
         <a href="#trainers" onclick="closeMobile()">Trainers</a>
@@ -258,9 +102,9 @@
         <a href="#reviews" onclick="closeMobile()">Reviews</a>
         <a href="#contact" onclick="closeMobile()">Contact</a>
       </nav>
-      <div class="inline" style="padding:16px 0 12px">
+      <div class="cta" style="padding:16px 0 12px;flex-direction:column;align-items:flex-start;gap:10px">
         <a class="btn" href="tel:6384645968">Call : 6384645968</a>
-        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank" rel="noopener">Google Directions</a>
+        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank">Google Directions</a>
       </div>
     </div>
   </header>
@@ -276,271 +120,11 @@
     </div>
   </section>
 
-  <!-- Hours -->
-  <section class="container" id="hours">
-    <h2>Operating Hours</h2>
-    <div class="card">
-      <div class="hours">
-        <div><strong>Monday - Saturday:</strong></div>
-        <div>5:00 AM - 10:00 PM</div>
-        <div><strong>Sunday:</strong></div>
-        <div>Closed</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Enquiry -->
-  <section class="container" id="enquiry">
-    <h2>Enquiry Form</h2>
-    <div class="card">
-      <form id="enquiryForm">
-        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:20px;">
-          <input class="col" style="grid-column: span 6;" name="name" placeholder="Full Name" required>
-          <input class="col" style="grid-column: span 6;" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
-          <input class="col" style="grid-column: span 12;" name="email" type="email" placeholder="Email (optional)">
-          <select class="col" style="grid-column: span 6;" name="interest">
-            <option value="Group Class">Group Class</option>
-            <option value="Personal Training">Personal Training</option>
-            <option value="Weight Loss">Weight Loss</option>
-            <option value="Strength">Strength</option>
-          </select>
-          <input class="col" style="grid-column: span 6;" name="time" placeholder="Preferred Time (e.g., 6 AM)">
-          <textarea class="col" style="grid-column: span 12;" name="message" placeholder="Tell us your goal"></textarea>
-        </div>
-        <div class="inline" style="justify-content:flex-end">
-          <button class="btn primary" type="submit">Submit Enquiry</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Packages -->
-  <section class="container" id="packages">
-    <h2>Membership Packages</h2>
-    <div class="grid">
-      <div class="card" style="grid-column: span 4;">
-        <h3>Basic Pack</h3>
-        <p>1 Month Membership</p>
-        <p><strong>₹1,500</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-      <div class="card" style="grid-column: span 4;">
-        <h3>3 Months</h3>
-        <p>Standard membership</p>
-        <p><strong>₹3,500</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-      <div class="card" style="grid-column: span 4;">
-        <h3>6 Months</h3>
-        <p>Extended membership</p>
-        <p><strong>₹6,000</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-      <div class="card" style="grid-column: span 4;">
-        <h3>1 Year</h3>
-        <p>Annual membership</p>
-        <p><strong>₹10,000</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-      <div class="card" style="grid-column: span 4;">
-        <h3>Student Pack</h3>
-        <p>Budget friendly for students</p>
-        <p><strong>₹1,000/month</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-      <div class="card" style="grid-column: span 4;">
-        <h3>Elite Training</h3>
-        <p>Customized workout plans</p>
-        <p><strong>₹6,000/month</strong></p>
-        <a class="btn" href="#enquiry">Enquire</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offers -->
-  <section class="container" id="offers">
-    <h2>Special Offers</h2>
-    <div class="grid">
-      <div class="card" style="grid-column: span 6;">
-        <h3>Women's Exclusive Offer</h3>
-        <ul>
-          <li>FREE Diet Plan Consultation (once every 2 months)</li>
-          <li>Buddy Pass - Bring a female friend for 1 week free (once every 3 months)</li>
-        </ul>
-        <a class="btn primary" href="#enquiry">Claim Offer</a>
-      </div>
-      <div class="card" style="grid-column: span 6;">
-        <h3>Gym Opening Offers</h3>
-        <p>For students below 20 years</p>
-        <ul>
-          <li>3 Months (₹3,500) - Get +1 Extra Month Free</li>
-          <li>6 Months (₹6,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
-          <li>1 Year (₹10,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
-        </ul>
-        <a class="btn primary" href="#enquiry">Claim Offer</a>
-      </div>
-      <div class="card" style="grid-column: span 6;">
-        <h3>Corporate Offer</h3>
-        <p>Join 4 and add 1 person free</p>
-        <a class="btn primary" href="#enquiry">Enquire Now</a>
-      </div>
-      <div class="card payment-container" style="grid-column: span 6;">
-        <h3>Payment Methods</h3>
-        <p>We accept:</p>
-        <div class="payment-methods">
-          <div class="payment-method">Cash</div>
-          <div class="payment-method">UPI</div>
-        </div>
-        <a class="btn" href="#enquiry" style="margin-top: 16px">More Info</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="container" id="gallery">
-    <h2>Photo Gallery</h2>
-    <div class="gallery">
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-    </div>
-    <p style="color:var(--muted);margin-top:20px">Gallery space reserved for future images of our facilities and equipment.</p>
-  </section>
-
-  <!-- Trainers -->
-  <section class="container" id="trainers">
-    <h2>Our Trainer</h2>
-    <div class="trainers">
-      <div class="card trainer">
-        <div class="avatar" aria-hidden="true"></div>
-        <div class="trainer-info">
-          <strong>Jeeva</strong>
-          <p style="color:var(--muted); margin:12px 0">Empowering every workout with strength, discipline, and results</p>
-          <div class="inline"><a class="btn" href="#enquiry">Enquire</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section class="container" id="reviews">
-    <h2>Reviews</h2>
-    <div class="reviews">
-      <div class="card">
-        <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
-      </div>
-      <div class="card">
-        <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
-      </div>
-      <div class="card">
-        <div class="stars">★★★★★</div>
-        <p>Space reserved for future customer reviews and testimonials.</p>
-        <small style="color:var(--muted)">— Coming Soon</small>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="container" id="contact">
-    <h2>Contact Us</h2>
-    <div class="grid">
-      <div class="card" style="grid-column: span 6;">
-        <h3>Visit Our Gym</h3>
-        <p>SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
-        <a class="btn primary" href="https://maps.app.goo.gl/AoPDpjE5u5shzZPg7" target="_blank">Get Directions</a>
-      </div>
-      <div class="card" style="grid-column: span 6;">
-        <h3>Call Us</h3>
-        <p>Our team is ready to answer your questions</p>
-        <a class="btn primary" href="tel:6384645968">Call: 6384645968</a>
-        <a class="btn" href="tel:8610209166">Call: 8610209166</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feedback -->
-  <section class="container" id="feedback">
-    <h2>Send Us Feedback</h2>
-    <div class="card">
-      <form id="feedbackForm">
-        <div class="grid" style="grid-template-columns:repeat(12,1fr); gap:20px;">
-          <input style="grid-column: span 6;" placeholder="Name" required>
-          <input style="grid-column: span 6;" placeholder="Phone (optional)">
-          <textarea style="grid-column: span 12;" placeholder="Your feedback" required></textarea>
-        </div>
-        <div class="inline" style="justify-content:flex-end">
-          <button class="btn primary" type="submit">Send Feedback</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p><strong>DELTA FITNESS</strong> • SVN College Opposite, Nagamalai, Pudukkottai, Madurai</p>
-      <p>Call: <a href="tel:6384645968">6384645968</a> • <a href="tel:8610209166">8610209166</a></p>
-      <p>Designed by <strong>Rishibala Murugan</strong></p>
-      <p>© 2023 Delta Fitness. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Toast -->
-  <div id="toast" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%) scale(.98);opacity:0;transition:.25s;z-index:60;background:#101015;border:1px solid #2a2a31;padding:12px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35)"></div>
-
   <script>
-    const burger = document.getElementById('burger');
-    const mobile = document.getElementById('mobile');
-    burger?.addEventListener('click', () => {
-      const on = mobile.classList.toggle('show');
-      burger.setAttribute('aria-expanded', on ? 'true' : 'false');
-    });
-    function closeMobile(){ mobile.classList.remove('show'); burger.setAttribute('aria-expanded','false'); }
-
-    function toast(msg){
-      const t = document.getElementById('toast');
-      t.textContent = msg; t.style.opacity=1; t.style.transform='translateX(-50%) scale(1)';
-      clearTimeout(window.__t);
-      window.__t = setTimeout(()=>{ t.style.opacity=0; t.style.transform='translateX(-50%) scale(.98)'; }, 2200);
-    }
-
-    // Form handling
-    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // In a real implementation, you would send this data to a server
-      toast('Thanks for your enquiry! We will contact you shortly.');
-      this.reset();
-    });
-
-    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // In a real implementation, you would send this data to a server
-      toast('Thank you for your feedback!');
-      this.reset();
-    });
-    
-    // Prevent zoom on mobile
-    document.addEventListener('touchstart', function(event) {
-      if (event.touches.length > 1) {
-        event.preventDefault();
-      }
-    }, { passive: false });
-    
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function(event) {
-      const now = (new Date()).getTime();
-      if (now - lastTouchEnd <= 300) {
-        event.preventDefault();
-      }
-      lastTouchEnd = now;
-    }, false);
+    const burger=document.getElementById('burger');
+    const mobile=document.getElementById('mobile');
+    burger?.addEventListener('click',()=>{mobile.classList.toggle('show')});
+    function closeMobile(){mobile.classList.remove('show');}
   </script>
 </body>
 </html>
