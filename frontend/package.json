@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+<<<<<<< HEAD
     "preview": "vite preview",
     "start": "vite"
   },
@@ -12,6 +13,14 @@
     "axios": "^1.11.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+=======
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+
+>>>>>>> ba90599119d7b0e4e113b3c71643c38dccbeccf7
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
