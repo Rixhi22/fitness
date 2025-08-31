@@ -105,7 +105,7 @@ const EnquiryForm = () => {
             />
           </div>
           <div className="inline" style={{justifyContent:'flex-end'}}>
-            <button className="btn primary" style={{color:"white"}} type="submit" onClick={handleChange}>Enquire Now</button>
+            <button className="btn primary" style={{color:"white"}} type="submit" onClick={handleSubmit}>Enquire Now</button>
           </div>
         </form>
       </div>

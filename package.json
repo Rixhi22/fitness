@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && node server.jsx",
-    "client": "cd frontend && npm start"
+    "client": "cd frontend/frontend && npm start"
   },
   "repository": {
     "type": "git",
