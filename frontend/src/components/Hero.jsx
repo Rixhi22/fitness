@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="hero container" id="top" style={{width: '100%',height: '100%',backgroundSize: 'cover'}}>
+    <section className="hero container" id="top">
       <h1>WHERE HUSTLE MEETS MUSCLE</h1>
       <p><br/>Elite Machines » Elite Physique<br/>Pro Trainers » Transform » Build Legends</p>
       <div className="hero-cta">

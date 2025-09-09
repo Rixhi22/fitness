@@ -41,6 +41,22 @@ function App() {
     setIsAuthenticated(false);
     showToast('Logged out');
   };
+  // const MachineImages = [
+  //   IMG_1.jpg,
+  //   IMG_2.jpg,
+  //   IMG_3.jpg,
+  //   IMG_4.jpg,
+  //   IMG_5.jpg
+  // ];
+  const MachineImages = [
+    ["IMG_1.jpg","TG-905","CHEST PRESS"],
+    ["IMG_2.jpg","TG-935","SHOULDER PRESS"],
+    ["IMG_3.jpg","TG-925","LOW ROW"],
+    ["IMG_4.jpg","SC800","STAIR MASTER"],
+    ["IMG_5.jpg","DS020","LEG PRESS"]
+    
+    
+  ];
 
   return (
     <div>
@@ -50,8 +66,9 @@ function App() {
       <EnquiryForm />
       <Packages />
       <Offers />
-      <Gallery />
+      <Gallery content="Photo Gallery"/>
       <Trainers />
+      <Gallery content={"Elite Machines"} images={MachineImages} />
       <Reviews />
       <Contact />
       <FeedbackForm onSuccess={() => showToast('Thank you for your feedback!')} />

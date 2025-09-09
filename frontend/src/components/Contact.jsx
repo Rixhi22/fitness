@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="card" style={{gridColumn: 'span 12'}}>
           <h3>Call Us</h3>
           <p>Our team is ready to answer your questions</p>
-          <a className="btn primary" href="tel:8610209166">Call: 8610209166</a>
+          <a className="btn primary" href="tel:8610209166">Call: 8610209166</a><br></br>
           <a className="btn" href="tel:8248579720">Call: 8248579720</a>
         </div>
       </div>

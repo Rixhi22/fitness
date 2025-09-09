@@ -15,11 +15,11 @@ const Offers = () => {
         </div>
         <div className="card" style={{gridColumn: 'span 12'}}>
           <h3>Gym Opening Offers</h3>
-          <p>For students below 20 years</p>
+          
           <ul>
-            <li>3 Months (₹3,500) - Get +1 Extra Month Free</li>
-            <li>6 Months (₹6,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
-            <li>1 Year (₹10,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
+            <li>3 Months (₹4,000) - Get +1 Extra Month Free</li>
+            <li>6 Months (₹6,500) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
+            <li>1 Year (₹11,000) - Get +1 Extra Month Free + 1 Month Personal Training Free</li>
           </ul>
           <a className="btn primary" href="#enquiry">Claim Offer</a>
         </div>
